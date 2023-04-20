@@ -35,5 +35,12 @@ public class SPersona {
     public void editPersona(Persona perso){
         persoRep.save(perso);
     }
-    
-}
+        
+    public Persona loginPersona(String emailLogin, String password){
+        List <Persona> personas = persoRep.findByEmailLoginAndPassword(emailLogin, password);
+        if(!personas.isEmpty()){
+            return personas.get(0);
+        }
+        return null;
+    }
+} 

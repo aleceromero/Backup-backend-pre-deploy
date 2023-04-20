@@ -53,5 +53,9 @@ public class CPersona {
         return "La persona fue editada correctamente";
     }
     
-    
+    @PostMapping ("/autenticacion/login")
+    public Persona loginPersona(@RequestBody Persona perso){
+        return persoServ.loginPersona(perso.getEmailLogin(), perso.getPassword());
+    }
+        
 }
